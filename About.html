@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribble Society | About</title>
+
+    <link rel="stylesheet" href="aboutStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="Screenshot 2025-09-12 122132.png" alt="Scribble Society Logo">
+        <h1>Scribble Society</h1>
+    </div>
+
+    <i class='bx bx-menu' id="menu-btn"></i>
+
+    <nav class="nav-links">
+        <a href="home.html" data-page="home">Home</a>
+        <a href="About.html" data-page="about">About</a>
+        <a href="ArtPieces.html" data-page="art">Art Pieces</a>
+        <a href="Booking.html" data-page="booking">Booking</a>
+        <a href="Profile.html" data-page="profile">Profile</a>
+        <a href="Signup.html" data-page="logout">Log Out</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <h1>About Us</h1>
+</section>
+
+
+<section class="about-block">
+    <div class="about-img">
+        <img src="alena-aenami-over-the-city1k.jpg" alt="Identity Stroke">
+    </div>
+
+    <div class="about-text">
+        <h2>Scribble Society's Identity Stroke</h2>
+        <p>
+            Scribble Society began as an unplanned scribble — a spark of creativity among friends
+            who shared a passion for art. We had talent, dreams, and stories to tell, but no platform
+            where we could freely express ourselves.
+            <br><br>
+            Scribble Society became a space for artists to be seen, heard, and celebrated without
+            judgment. A place where creativity breathes and individuality thrives.
+        </p>
+    </div>
+</section>
+
+
+<section class="about-block reverse">
+    <div class="about-img">
+        <img src="alena-aenami-lighthouse1k.jpg" alt="Scribblers Code">
+    </div>
+
+    <div class="about-text">
+        <h2>The Scribblers Code</h2>
+        <p>
+            Scribble Society is a home for raw emotions, chaotic ideas, and untamed creativity.
+            A place where sketches become stories and stories spark connection.
+            <br><br>
+            Through exhibitions, pop-up galleries, digital showcases, and networking events, we
+            help young artists gain exposure and reach collaborators, brands, and organizations.
+        </p>
+    </div>
+</section>
+
+
+<section class="about-block">
+    <div class="about-img">
+        <img src="alena-aenami-rooflinesgirl-1k-2.jpg" alt="Masterstroke">
+    </div>
+
+    <div class="about-text">
+        <h2>The Masterstroke</h2>
+        <p>
+            We are dedicated to guiding young creators into the world of professional artistry.
+            Scribble Society empowers emerging artists with community support, visibility, and
+            opportunities to transform passion into purpose.
+        </p>
+    </div>
+</section>
+
+
+
+<footer>
+    <div class="socials">
+        <i class='bx bxl-instagram'></i>
+        <i class='bx bxl-twitter'></i>
+        <i class='bx bxl-youtube'></i>
+    </div>
+
+    <p>Contact us if you want to Commission an Artist or if you want to purchase any Artpieces you are interested in:<br>
+        <a href="mailto:ScribbleSociety@gmail.com">ScribbleSociety@gmail.com</a><br>
+        +27 76 994 0393
+    </p>
+</footer>
+
+
+<script>
+    const links = document.querySelectorAll(".navbar a");
+    function setActive(page) {
+        links.forEach(link => link.classList.toggle("active", link.dataset.page === page));
+    }
+    setActive("about");
+</script>
+
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuBtn.onclick = () => navLinks.classList.toggle("open");
+</script>
+
+</body>
+</html>

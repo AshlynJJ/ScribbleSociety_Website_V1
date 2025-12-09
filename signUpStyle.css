@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2c3e50 url('cat-watching-sunset-city.jpg') no-repeat center/cover;
+}
+
+.wrapper {
+    width: 450px;
+    background: rgba(9, 13, 96, 0.604);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 40px 45px;
+    animation: fadeIn 1s ease;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.subtitle {
+    text-align: center;
+    color: #ddd;
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #ff96e6;
+    box-shadow: 0 0 10px #ff96e6;
+}
+
+.input-box input::placeholder {
+    color: #eee;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, #ff96e6, #9c6bff);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff96e6;
+}
+
+.register-link {
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 10px;
+    color: #fff;
+}
+
+.register-link a {
+    color: #ffbfff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.register-link a:hover {
+    text-shadow: 0 0 8px #ffbfff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.role-section {
+    margin: 25px 0;
+    color: #fff;
+}
+
+.role-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.role-option {
+    display: block;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.role-option:hover {
+    box-shadow: 0 0 12px #ff96e6;
+    transform: translateY(-2px);
+}
+
+.role-option input {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #ff96e6;
+}
+
+.role-title {
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.role-desc {
+    font-size: 13px;
+    color: #e9e9e9;
+    opacity: 0.9;
+    margin-left: 28px;
+}

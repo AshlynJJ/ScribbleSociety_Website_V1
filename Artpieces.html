@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribble Society | Art Pieces</title>
+    <link rel="stylesheet" href="artPiecesStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="Screenshot 2025-09-12 122132.png" alt="Scribble Society Logo">
+        <h1>Scribble Society</h1>
+    </div>
+
+    <i class='bx bx-menu' id="menu-btn"></i>
+
+    <nav class="nav-links">
+        <a href="Home.html" data-page="home">Home</a>
+        <a href="About.html" data-page="about">About</a>
+        <a href="ArtPieces.html" data-page="art">Art Pieces</a>
+        <a href="Booking.html" data-page="booking">Booking</a>
+        <a href="Profile.html" data-page="profile">Profile</a>
+        <a href="Signup.html" data-page="logout">Log Out</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <h1>Browse Our Artists' Masterpieces</h1>
+
+    <div class="filters">
+        <button class="active">Character</button>
+        <button>Anime</button>
+        <button>Landscape</button>
+        <button>Cartoon</button>
+        <button>Animals</button>
+        <button>Armor</button>
+        <button>World</button>
+        <button>Fantasy</button>
+        <button>Portraits</button>
+    </div>
+</section>
+
+
+<section class="grid">
+    <div class="card">
+        <img src="sean-raiko-tay-egwhehfu4aebuvk.jpg" alt="Art 1">
+        <div class="heart">❤</div>
+        <div class="info">Sean Raiko Tay</div>
+         <button class="view-btn" data-img="sean-raiko-tay-egwhehfu4aebuvk.jpg">View</button>
+    </div>
+
+    <div class="card">
+        <img src="sam-nassour-logancartoon.jpg" alt="Art 2">
+        <div class="heart">❤</div>
+        <div class="info">Sam Nassour</div>
+        <button class="view-btn" data-img="sam-nassour-logancartoon.jpg">View</button>
+        
+    </div>
+
+    <div class="card">
+        <img src="alexandra-fomina-1.jpg" alt="Art 3">
+        <div class="heart">❤</div>
+        <div class="info">Alexandra Fomina</div>
+        <button class="view-btn" data-img="alexandra-fomina-1.jpg">View</button>
+    </div>
+
+    <div class="card">
+        <img src="rossdraws-baby-faye-post.jpg" alt="Art 4">
+        <div class="heart">❤</div>
+        <div class="info">Rossdraws</div>
+         <button class="view-btn" data-img="rossdraws-baby-faye-post.jpg">View</button>
+    </div>
+
+    <div class="card">
+        <img src="vanessa-palmer-vanessa-palmer-env-mossycanoe-03.jpg" alt="Art 5">
+        <div class="heart">❤</div>
+        <div class="info">Venessa Palmer</div>
+         <button class="view-btn" data-img="vanessa-palmer-vanessa-palmer-env-mossycanoe-03.jpg">View</button>
+    </div>
+
+    <div class="card">
+        <img src="yelli-golden-2.jpg" alt="Art 6">
+        <div class="heart">❤</div>
+        <div class="info">Yelli Golden</div>
+        <button class="view-btn" data-img="yelli-golden-2.jpg">View</button>
+    </div>
+</section>
+
+<div id="image-modal" class="modal">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="modal-image">
+    <div id="caption"></div>
+</div>
+
+
+<footer>
+    <div class="socials">
+        <i class='bx bxl-instagram'></i>
+        <i class='bx bxl-twitter'></i>
+        <i class='bx bxl-youtube'></i>
+    </div>
+
+    <p>Contact us if you want to Commission an Artist or if you want to purchase any Artpieces you are interested in:<br>
+        <a href="mailto:ScribbleSociety@gmail.com">ScribbleSociety@gmail.com</a><br>
+        +27 76 994 0393
+    </p>
+</footer>
+
+
+<script>
+    const links = document.querySelectorAll(".navbar a");
+    function setActive(page) {
+        links.forEach(link => link.classList.toggle("active", link.dataset.page === page));
+    }
+    setActive("art");
+
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+    menuBtn.onclick = () => navLinks.classList.toggle("open");
+</script>
+
+<script>
+    const card = document.querySelectorAll('.card');
+
+    card.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('selected');
+        });
+    });
+
+    const filter = document.querySelectorAll('.filters button');
+
+    filter.forEach(button => {
+        button.addEventListener('click', () => {
+            filter.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+</script>
+
+<script>
+
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const closeBtn = document.querySelector('.close-btn');
+
+    const viewButtons = document.querySelectorAll('.view-btn');
+
+  
+    const heartIcons = document.querySelectorAll('.card .heart'); 
+
+    
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+           
+            e.stopPropagation(); 
+            
+       
+            const imgSrc = this.getAttribute('data-img');
+            
+            
+            modalImage.src = imgSrc;
+            modal.style.display = 'block';
+        });
+    });
+    
+  
+    heartIcons.forEach(heart => {
+        heart.addEventListener('click', function(e) {
+            
+            e.stopPropagation(); 
+            
+          
+            const parentCard = this.closest('.card');
+            parentCard.classList.toggle('selected');
+        });
+    });
+
+
+  
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+   
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            
+            card.classList.toggle('selected');
+        });
+    });
+
+   
+    const filterButtons = document.querySelectorAll('.filters button');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>

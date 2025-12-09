@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signUpStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/signup" method="POST">
+            <h1>Create Account</h1>
+            <p class="subtitle">Start your journey</p>
+
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="role-section">
+                <h3>Select Your Role</h3>
+
+                <label class="role-option">
+                    <input type="checkbox" name="role" value="scribbler">
+                    <span class="role-title">🖋 Scribbler</span>
+                    <p class="role-desc">The artist creating masterpieces — expressing imagination and crafting art.</p>
+                </label>
+
+                <label class="role-option">
+                    <input type="checkbox" name="role" value="collector">
+                    <span class="role-title">🎨 Masterpiece Collector</span>
+                    <p class="role-desc">People who scout, buy, sponsor, support, or browse artistic creations.</p>
+                </label>
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+
+            <div class="register-link">
+                <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

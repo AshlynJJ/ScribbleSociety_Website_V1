@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribble Society | Booking</title>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="bookingStyle.css">
+</head>
+<body>
+
+
+
+    
+    <header class="navbar">
+        <div class="logo">
+    <img src="Screenshot 2025-09-12 122132.png" alt="Scribble Society Logo">
+    <h1>Scribble Society</h1>
+</div>
+        <i class='bx bx-menu' id="menu-btn"></i>
+        <nav class="nav-links">
+            <a  href="home.html" data-page="home">Home</a>
+            <a  href="About.html" data-page="about">About</a>
+            <a  href="ArtPieces.html" data-page="art">Art Pieces</a>
+            <a  href="Booking.html" data-page="booking">Booking</a>
+            <a  href="Profile.html" data-page="profile">Profile</a>
+           <a href="Signup.html" data-page="logout">Log Out</a>
+        </nav>
+    </header>
+
+   
+    <section class="booking-container">
+
+        <form class="booking-form">
+
+            <h2>Please book a date to come visit the Studio</h2>
+            <p class="subtitle">
+                When filling out this form please keep in mind you are booking a time slot to visit the studio.</br>
+                There is still an entrance fee that will be charged on the day of your visit at the reception desk.</br>
+                The price is R100 per person.</br>
+                This price includes a free drink and snack of your choice.</br>
+            </p>
+
+            <label>First Name</label>
+            <input type="text" placeholder="First Name" required>
+
+            <label>Last Name</label>
+            <input type="text" placeholder="Last Name" required>
+
+            <label>Please pick a date and time you are visiting the studio</label>
+            <div class="datetime-row">
+                <input type="date" required>
+                <input type="time" required>
+            </div>
+
+            <div class="checkboxes">
+                <label>
+                    <input type="checkbox"> Masterpiece Collector
+                    <span>Potential Buyer</span>
+                </label>
+
+                <label>
+                    <input type="checkbox"> DoodleScope
+                    <span>Viewing the Art Gallery</span>
+                </label>
+            </div>
+
+            <button type="submit" class="book-btn">Book</button>
+        </form>
+
+    </section>
+
+       <footer>
+        <div class="socials">
+            <i class='bx bxl-instagram'></i>
+            <i class='bx bxl-twitter'></i>
+            <i class='bx bxl-youtube'></i>
+        </div>
+       <p>Contact us if you want to Commission an Artist or if you want to purchase any Artpieces you are interested in:<br>
+            <a href="mailto:ScribbleSociety@gmail.com">ScribbleSociety@gmail.com</a><br>
+            +27 76 994 0393
+        </p>
+    </footer>
+
+    <script>
+  const links = document.querySelectorAll(".navbar a");
+  function setActive(page) {
+    links.forEach(link => link.classList.toggle("active", link.dataset.page === page));
+  }
+  setActive("booking"); 
+</script>
+
+<script>
+      const menuBtn = document.getElementById("menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+      menuBtn.onclick = () => navLinks.classList.toggle("open");
+    </script>
+
+    
+    <script src="particles.js"></script>
+
+</body>
+</html>
+
